@@ -1,0 +1,1 @@
+Read-only product analysis. Only this analysis directory is created. Product code, configuration, dependencies, public deployment, Git history, and remotes are not modified.

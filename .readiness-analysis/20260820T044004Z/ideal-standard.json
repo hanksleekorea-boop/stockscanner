@@ -1,0 +1,22 @@
+{
+  "schema":"kabulens-ideal-standard/v1",
+  "assessedAt":"2026-08-20",
+  "scale":{"0":"없음 또는 실패","1":"소개·제한적","2":"기본 흐름","3":"실제 흐름·오류 처리·지원","4":"개인화·측정·반복 개선","unknown":"미확인"},
+  "standards":[
+    {"id":"S01","group":"시작·개인화","ideal":"첫 방문자가 투자 목적·관심 종목·데이터 권한 상태를 선택하고 즉시 맞춤 첫 화면을 받는다.","why":"처음의 정보 과부하를 낮춘다.","marketEvidence":"Koyfin의 관심 목록·대시보드, TradingView의 저장 화면","targetEvidence":"관심·보유 화면은 있으나 온보딩은 미확인","score":1,"verification":"신규 사용자 과업 시험"},
+    {"id":"S02","group":"핵심 가치·실행","ideal":"기업별 원문 근거에서 숫자·판정·약속 이행까지 한 흐름으로 추적한다.","why":"KABU LENS의 차별 핵심이다.","marketEvidence":"株探의 결산·공시 정보 제공","targetEvidence":"E03 약속 이행 엔진과 약속 화면 코드","score":2,"verification":"실제 공개 문서 30건의 근거 연결 시험"},
+    {"id":"S03","group":"핵심 가치·실행","ideal":"검색·필터·정렬·저장 화면으로 대규모 종목을 재현 가능하게 좁힌다.","why":"조사 시간을 줄인다.","marketEvidence":"TradingView와 moomoo의 조건 기반 스크리닝","targetEvidence":"기업 찾기는 있으나 공개판의 다중 필터·정렬·페이지 나눔 미확인","score":1,"verification":"1만 종목 기준 과업 시험"},
+    {"id":"S04","group":"핵심 가치·실행","ideal":"근거 출처, 확인일, 계산식, 신뢰도를 각 판정에서 즉시 볼 수 있다.","why":"투자 판단을 보장하지 않으면서 검토 가능성을 높인다.","marketEvidence":"금융 조사 도구의 재무·문서 분석 표면","targetEvidence":"source_refs·신뢰도 계약과 예시 화면","score":2,"verification":"판정 32종 근거 링크 완결성 검사"},
+    {"id":"S05","group":"핵심 가치·실행","ideal":"사용자 소유 CSV와 서비스 데이터의 권리·보존·삭제 범위를 분리해 설명한다.","why":"데이터 사용권과 신뢰 경계에 중요하다.","marketEvidence":"해당 없음; 위험 저감 기준","targetEvidence":"CSV 비저장 검증은 확인, 공개 정책은 미확인","score":1,"verification":"정책·저장소·네트워크 흐름 대조"},
+    {"id":"S06","group":"품질·성장","ideal":"모바일·PC에서 같은 조사 흐름과 저장 상태가 안정적으로 이어진다.","why":"PWA의 핵심 약속이다.","marketEvidence":"moomoo의 다중 표면, TradingView의 관심 목록 연결","targetEvidence":"12화면·반응형·저장 검사 27/27","score":2,"verification":"Chrome·Edge·Firefox·Safari와 실제 기기 시험"},
+    {"id":"S07","group":"품질·성장","ideal":"홈 화면 독립 실행, 업데이트, 오프라인 재진입을 실제 Android와 iPhone에서 확인한다.","why":"설치형 웹앱의 신뢰 조건이다.","marketEvidence":"PWA 일반 품질 기준","targetEvidence":"서비스 워커 코드와 데스크톱 오프라인 재탐색은 확인, Android cold 오프라인은 실패 기록","score":1,"verification":"유휴 기기 각 1대에서 설치·업데이트·오프라인 시험"},
+    {"id":"S08","group":"품질·성장","ideal":"접근성, 키보드, 색 대비, 작은 화면, 오류 문구를 자동과 수동으로 반복 확인한다.","why":"조사 서비스의 읽기 품질을 높인다.","marketEvidence":"웹 접근성 우수 관행","targetEvidence":"44px 목표·포커스·움직임 줄이기·명령 팔레트 코드","score":2,"verification":"WCAG 2.2 AA 수동 점검과 보조기술 시험"},
+    {"id":"S09","group":"신뢰·상용화","ideal":"투자 조언 아님, 데이터 출처·권리, 지연·오류, 수익 구조를 화면과 정책에서 명확히 알린다.","why":"금융 정보 서비스 오해를 줄인다.","marketEvidence":"금융 서비스의 공시·데이터 경계","targetEvidence":"README의 금지사항·공개판의 증거 대기 안내","score":1,"verification":"공개 정책과 모든 핵심 화면 검토"},
+    {"id":"S10","group":"신뢰·상용화","ideal":"이용약관·개인정보·삭제·문의·운영 주체를 공개하고 실제 경로를 검증한다.","why":"출시 전 필수 신뢰 표면이다.","marketEvidence":"상용 서비스의 기본 운영 표면","targetEvidence":"미확인","score":0,"verification":"공개 URL 및 운영자 검토"},
+    {"id":"S11","group":"신뢰·상용화","ideal":"시장 데이터·공시 원문의 사용권과 표시·저장·재배포 범위를 계약 또는 공식 허가로 확인한다.","why":"제품 출시를 직접 막을 수 있는 조건이다.","marketEvidence":"상용 금융 데이터 서비스의 계약 기반 제공","targetEvidence":"무계약 수집 차단·LINK_ONLY 설계, 계약 증거 미확인","score":1,"verification":"데이터 공급사 계약·법률 검토"},
+    {"id":"S12","group":"운영·확장","ideal":"공개 데이터 수집·파싱·판정 실패율, 지연, 근거 누락을 관찰하고 경고한다.","why":"32개 판정의 최신성과 신뢰를 유지한다.","marketEvidence":"Koyfin의 경보, 조사 도구의 운영 지표","targetEvidence":"고정 자료 검사와 차단 경계는 확인, 실운영 관찰은 미확인","score":1,"verification":"운영 대시보드와 경보 시험"},
+    {"id":"S13","group":"운영·확장","ideal":"문서·데이터·앱 판의 변경과 복구를 실제로 훈련한다.","why":"조사 이력 손실을 막는다.","marketEvidence":"상용 운영의 복구 기준","targetEvidence":"로컬 저장 이전 보존 검사는 있음; 원격 복구는 차단 상태","score":1,"verification":"복구 훈련과 RPO/RTO 기록"},
+    {"id":"S14","group":"운영·확장","ideal":"가상 사용자와 실제 사용자 과업을 분리하여 개선 우선순위를 정한다.","why":"합성 시험을 실제 만족도로 오해하지 않기 위해서다.","marketEvidence":"제품 연구 우수 관행","targetEvidence":"1,000명×12 합성 시험 기록, 실제 시험 사용자 미확인","score":2,"verification":"페르소나 재현성·실제 사용자 과업 시험"},
+    {"id":"S15","group":"운영·확장","ideal":"공개 출시 절차가 검사·승인·되돌림·사후 확인으로 문서화된다.","why":"변경 사고를 줄인다.","marketEvidence":"정적 사이트 운영 우수 관행","targetEvidence":"GitHub Pages 공개 확인과 정적 검사 기록","score":2,"verification":"출시 후보 검사와 공개 응답 재확인"}
+  ]
+}

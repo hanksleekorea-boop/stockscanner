@@ -1,5 +1,5 @@
 {
-  "project": "스톡스캐너",
+  "project": "카부렌즈",
   "status": "COMMERCIALIZATION_READY_v3.4",
   "stages_ready_for_execution": true,
   "metrics_evaluated": 2400,
@@ -9,5 +9,5 @@
     "B",
     "C"
   ],
-  "audit_time": "2026-09-19T15:16:15.084Z"
+  "audit_time": "2026-09-19T15:16:15.116Z"
 }

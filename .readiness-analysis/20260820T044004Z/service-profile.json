@@ -1,0 +1,56 @@
+{
+  "schema": "kabulens-service-profile/v1",
+  "assessedAt": "2026-08-20",
+  "product": {
+    "name": "KABU LENS / 카부렌즈 / 株レンズ",
+    "description": "도쿄증권거래소 상장사의 일본어 공시와 재무 근거를 구조화하고, 32개 판정으로 특히 경영진의 정량 약속과 실제 실적의 이행을 추적하려는 연구용 PWA입니다.",
+    "factSources": [
+      "KABULENS_HANDOFF_20260809/README.md",
+      "KABULENS_HANDOFF_20260809/04_app/README.md"
+    ],
+    "publicUrls": {
+      "web": "https://hanksleekorea-boop.github.io/kabulens-public-web/",
+      "mobile": "https://hanksleekorea-boop.github.io/kabulens-public-web/",
+      "qr": "https://hanksleekorea-boop.github.io/kabulens-public-web/kabulens-public-qr.png"
+    },
+    "stage": "공개 정적 PWA v0.20; 실제 외부 데이터 수집과 상업 운영은 차단 상태",
+    "targetMarket": "일본 상장사 조사 사용자; 출시 국가·가격·사업자 정보는 미확인",
+    "revenueModel": "미확인; 현재 공개판에 결제·구독 기능은 확인되지 않음"
+  },
+  "usersAndProblem": {
+    "primaryUser": "일본 상장사의 공시, 재무 수치, 경영 약속을 근거와 함께 검토하려는 개인 투자자 또는 분석 담당자",
+    "problem": "공시 원문과 지표가 흩어져 있어 경영진의 정량 약속이 실제로 이행되는지 반복적으로 비교하기 어렵다.",
+    "coreFlow": [
+      "오늘 화면에서 예시 판정 확인",
+      "기업 찾기·관심·보유·공시·약속·자본·우대·내 CSV로 탐색",
+      "근거와 상태를 확인하고 로컬 저장·복구",
+      "PWA 설치와 오프라인 앱 준비 상태 확인"
+    ]
+  },
+  "platforms": {
+    "pcWeb": "12개 화면, 900px 이상 좌측 탐색, 명령 팔레트와 키보드 단축키",
+    "mobileWebPwa": "하단 4개 기본 탭과 더보기, 44px 이상 터치 목표, manifest와 서비스 워커",
+    "nativeApp": "미구현; 설치형 웹앱만 제공"
+  },
+  "confirmedFeatures": [
+    {"name":"12개 조사 화면","evidence":"04_app/web/index.html 및 web 정적 검사"},
+    {"name":"약속 이행 E03 판정 엔진","evidence":"04_app/server/app/engines.py"},
+    {"name":"공시·재무·사용자 상태 62표 데이터 뼈대","evidence":"04_app/README.md"},
+    {"name":"사용자 소유 CSV의 비저장 검증","evidence":"04_app/README.md"},
+    {"name":"오프라인 앱 껍질과 안전한 업데이트 안내","evidence":"04_app/web/sw.js, app.js"},
+    {"name":"로컬 시험 세션·알림·보존 영향 미리보기","evidence":"04_app/web/app.js"},
+    {"name":"개인정보 가리기","evidence":"04_app/web/app.js"}
+  ],
+  "technicalSurface": {
+    "stack": "정적 HTML/CSS/JavaScript PWA, 의존성 없는 개발용 Python HTTP API, SQLite 이전; FastAPI·PostgreSQL·Docker 실실행은 미확인",
+    "tests": "2026-08-20에 Node 웹 검사 27/27 통과. Python 실행기는 현재 PC에 없어 재실행 미실시.",
+    "deployment": "GitHub Pages 공개 HTTPS 응답 200과 v0.20을 2026-08-20에 확인",
+    "security": "HTTPS 응답의 Strict-Transport-Security 확인; 실제 상용 보안 운영·침해 대응·외부 점검은 미확인",
+    "policySurface": "데이터 사용권과 투자 조언 금지는 README에 명시. 공개 이용약관·개인정보 처리방침·사업자·문의 경로는 미확인"
+  },
+  "verificationBoundary": {
+    "fact": "파일·자동 검사·공개 HTTPS 응답으로 확인한 내용",
+    "inference": "제품 목표와 경쟁 구조에 관한 분석적 해석",
+    "unknown": "실사용 지표, 유료 전환, 실제 시장 점유율, 법률 준수, 외부 데이터 계약, 실제 iPhone 시험"
+  }
+}

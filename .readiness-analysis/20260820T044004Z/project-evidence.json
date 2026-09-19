@@ -1,0 +1,93 @@
+{
+  "schema": "crh-project-evidence/v1",
+  "assessedAt": "2026-08-20",
+  "scope": "all",
+  "project": {
+    "name": "KABU LENS",
+    "repository": "hanksleekorea-boop/kabulens",
+    "description": "일본 상장사의 공시·재무 근거와 경영 약속 이행을 검토하는 공개 정적 PWA 및 개발용 API 골격입니다.",
+    "urls": {"web":"https://hanksleekorea-boop.github.io/kabulens-public-web/","mobile":"https://hanksleekorea-boop.github.io/kabulens-public-web/"},
+    "features": [
+      {"name":"12개 조사 화면","platform":"공통","status":"자동 검증","evidence":"2026-08-20 Node 웹 검사 27/27 통과"},
+      {"name":"약속 이행 E03 판정","platform":"공통","status":"코드 확인","evidence":"04_app/server/app/engines.py"},
+      {"name":"로컬 저장·손상 보존·복구","platform":"공통","status":"자동 검증","evidence":"storage 검사 6개 통과"},
+      {"name":"PWA 설치·업데이트 안내","platform":"모바일","status":"자동 검증","evidence":"mobile·static 검사 통과"},
+      {"name":"공개 HTTPS v0.20","platform":"PC 웹","status":"브라우저 외부 응답 확인","evidence":"2026-08-20 HTTP 200, Strict-Transport-Security"},
+      {"name":"Android 독립 실행·업데이트","platform":"모바일","status":"미확인","evidence":"v0.20 유휴 기기 시험 없음"}
+    ]
+  },
+  "direction": {"model":"one","market":"glob","pay":"none","pf":"eq","stage":"ob","sens":"high","team":"s","edge":"content","when":"m6"},
+  "evidence": {
+    "mobile": {
+      "f01":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"12개 화면·모바일 흐름 정적 검사; 실제 전체 사용자 여정은 미실시"},
+      "f05":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"기업 찾기는 있으나 공개판의 필터·정렬·페이지 나눔은 미확인"},
+      "f06":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"오프라인 안내·재시도 안내·상태 문구 코드와 검사"},
+      "f08":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"서비스 워커 앱 껍질 캐시와 오프라인 안내 검사"},
+      "f15":{"score":2,"tier":"self","observedAt":"2026-08-19","note":"개발용 로컬 알림 목록·읽음 처리 코드; 공개 서비스 검증은 아님"},
+      "f18":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"표시·개인정보 가리기·설치 설정은 있으나 약관·문의는 미확인"},
+      "q01":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"Node 27/27 통과; 전체 가입·결제 흐름은 제품 범위 밖 또는 미구현"},
+      "q04":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"검사 증거 문서는 있으나 공식 QA 회의와 결함 대장은 미확인"},
+      "q08":{"score":1,"tier":"1","observedAt":"2026-08-19","note":"과거 Android 한 대의 공개판 확인 기록은 있으나 v0.20 기기 행렬 미실시"},
+      "q09":{"score":1,"tier":"1","observedAt":"2026-08-19","note":"저장자료 이전 검사는 있으나 실제 설치형 업데이트는 미확인"},
+      "r02":{"score":2,"tier":"1","observedAt":"2026-08-19","note":"공개판 버전과 서비스 워커 버전, 저장자료 보존 검사 확인"},
+      "r04":"unknown",
+      "r05":"unknown",
+      "r06":"unknown",
+      "u04":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"합성 페르소나 시험은 있으나 실제 사용성 시험 미확인"},
+      "u05":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"설치 안내는 있으나 목적 기반 첫 방문 설계는 미확인"},
+      "s03":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"원문 인증값은 저장하지 않는 설계; 실제 민감정보 처리 체계는 미확인"},
+      "s05":"unknown",
+      "s08":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"로컬 세션·감사 관련 코드가 있으나 상용 접근제어 운영은 미확인"},
+      "l07":"unknown",
+      "l08":"unknown",
+      "l10":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"데이터·원문 사용 제한은 문서화, 전체 지식재산 정리는 미확인"},
+      "m02":"na",
+      "m04":"na",
+      "m06":"na",
+      "o01":{"score":0,"tier":"self","observedAt":"2026-08-20","note":"공개 운영용 모니터링·경보는 확인되지 않음"},
+      "o05":"unknown"
+    },
+    "web": {
+      "f01":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"12개 화면·PC 흐름 정적 검사; 실계정 전체 여정은 미실시"},
+      "f05":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"기업 찾기는 있으나 대규모 필터·정렬·페이지 나눔은 미확인"},
+      "f06":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"오프라인·상태 문구와 오류 경계 코드"},
+      "f10":{"score":1,"tier":"1","observedAt":"2026-08-19","note":"Chromium 공개판 확인; Edge·Firefox·Safari 미실시"},
+      "f11":{"score":2,"tier":"auto","observedAt":"2026-08-20","note":"해시 화면 경로·저장자료 반복 이전 검사"},
+      "f15":{"score":2,"tier":"self","observedAt":"2026-08-19","note":"개발용 로컬 알림 목록·읽음 처리"},
+      "f18":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"표시 설정과 개인정보 가리기 존재, 정책·문의 미확인"},
+      "q01":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"Node 27/27 통과, Python 재실행은 실행기 부재로 미실시"},
+      "q04":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"검사 증거 문서 있음; 공식 QA 운영 체계 미확인"},
+      "q10":{"score":0,"tier":"auto","observedAt":"2026-08-20","note":"크로스 브라우저 자동 검사는 확인되지 않음"},
+      "q11":{"score":1,"tier":"1","observedAt":"2026-08-20","note":"공개 홈 HTTPS 응답은 확인; 전수 링크·콘솔 크롤링 미실시"},
+      "p03":{"score":1,"tier":"1","observedAt":"2026-08-20","note":"GitHub Pages CDN·캐시 헤더는 확인; 이미지 최적화 측정 미실시"},
+      "p07":"unknown",
+      "p08":"unknown",
+      "p09":"unknown",
+      "p10":"unknown",
+      "r02":{"score":2,"tier":"1","observedAt":"2026-08-19","note":"v0.20과 서비스 워커 v17 공개 응답·보존 검사"},
+      "u04":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"합성 페르소나 시험은 실제 사용성 시험이 아님"},
+      "u05":{"score":1,"tier":"auto","observedAt":"2026-08-20","note":"탐색과 설치 안내 존재; 첫 방문 맞춤화 미확인"},
+      "s03":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"비밀값 원문 미저장 설계; 실제 상용 처리 체계 미확인"},
+      "s05":"unknown",
+      "s08":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"로컬 세션·감사 관련 코드; 상용 운영 증거 미확인"},
+      "s12":"na",
+      "l07":"unknown",
+      "l08":"unknown",
+      "l10":{"score":1,"tier":"self","observedAt":"2026-08-19","note":"데이터 이용 제한은 문서화, 전체 권리 정리 미확인"},
+      "m02":"na",
+      "m04":"na",
+      "m06":"na",
+      "o01":{"score":0,"tier":"self","observedAt":"2026-08-20","note":"공개 운영용 모니터링·경보는 확인되지 않음"},
+      "o05":"unknown"
+    }
+  },
+  "benchmark": {
+    "comparators": [
+      {"name":"株探","scores":{"feat":4,"ux":3,"perf":2,"trust":3,"reach":3,"local":5}},
+      {"name":"moomoo Japan","scores":{"feat":4,"ux":3,"perf":3,"trust":3,"reach":4,"local":4}},
+      {"name":"TradingView","scores":{"feat":4,"ux":4,"perf":4,"trust":4,"reach":5,"local":3}},
+      {"name":"Koyfin","scores":{"feat":4,"ux":4,"perf":3,"trust":4,"reach":4,"local":3}}
+    ]
+  },
+  "axisWeights":{"a1":50,"a2":25,"a3":25}
+}
