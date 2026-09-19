@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "project": "스톡스캐너",
+    "timestamp": "2026-09-19T15:16:15.082Z",
+    "version": "v3.4"
+  },
+  "engine_A_general": {
+    "domain_match": [
+      "주식 스캐너",
+      "SaaS",
+      "Aggregator"
+    ],
+    "target_audience": "Global Users, Professionals",
+    "key_features": [
+      "조건 검색",
+      "차트 패턴 분석",
+      "실시간 속보"
+    ]
+  },
+  "engine_B_commercial": {
+    "auth": "Google Login, GitHub OAuth, Email/PW",
+    "pwa": "Manifest, Service Worker, Offline Support",
+    "premium": "Freemium Tier setup"
+  },
+  "engine_C_collaboration": {
+    "shared_storage": "Cloud Sync, Local First",
+    "concurrent_editing": "CRDT, WebSocket sync",
+    "conflict_resolution": "Last-write-wins + manual merge"
+  }
+}
